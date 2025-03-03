@@ -1,20 +1,21 @@
-# Task - 1 - Guess the number
+
+# -------------------------------------------------------------------------------------------
+
+# Task-2 - word scramble
 
 import random
 
-number= random.randint(1,6)
-attempts = 0
-print("guess the number")
+words = ['python', 'javascript', 'java', 'automation', 'pytest', 'guvi', 'selenium']
 
-while True:
+selection = random.choice(words)
 
-    guess=int(input("enter the number = "))
-    attempts +=1
-    if (guess > number):
-        print("too heigh try again")
-    elif (guess < number):
-        print("too low")
-    else:
-        print("correct number")
+scrambled_word=''.join(random.sample(selection, len(selection)))
 
+print(scrambled_word)
 
+answer=input("answer the original word")
+
+if (answer.lower()==selection.lower()):
+    print("right answer")
+else:
+    print("wrong answer correct answer is ", selection)
